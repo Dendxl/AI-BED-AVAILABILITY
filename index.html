@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hospital Bed Availability - San Pablo</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Hospital Bed Tracker (MVP)</h1>
+    <p>San Pablo City, Laguna</p>
+  </header>
+
+  <section id="entry">
+    <h2>Update Hospital Bed Data</h2>
+    <form id="bedForm">
+      <label>Hospital
+        <select id="hospital_id" required></select>
+      </label>
+      <label>Total Beds <input type="number" id="total_beds" min="1" required></label>
+      <label>Occupied Beds <input type="number" id="occupied_beds" min="0" required></label>
+      <label>ICU Beds <input type="number" id="icu_beds" min="0" value="0"></label>
+      <label>Note <input type="text" id="note"></label>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="message"></div>
+  </section>
+
+  <section id="dashboard">
+    <h2>Real-time Bed Availability Dashboard</h2>
+    <div id="legend">
+      <span class="badge green">Available</span>
+      <span class="badge yellow">Limited</span>
+      <span class="badge red">Full</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Hospital</th>
+          <th>Total</th>
+          <th>Occupied</th>
+          <th>Available</th>
+          <th>%</th>
+          <th>Status</th>
+          <th>Likely Full</th>
+          <th>Updated At</th>
+        </tr>
+      </thead>
+      <tbody id="datatable"></tbody>
+    </table>
+  </section>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
